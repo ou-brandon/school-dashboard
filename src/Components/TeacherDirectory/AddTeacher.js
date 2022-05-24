@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc} from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
+import db from "../../firebase.js"
 
 const AddTeacher = (props) => {
     
@@ -13,30 +14,7 @@ const AddTeacher = (props) => {
     const newTeacherFirstName = useRef();
     const newTeacherLastName = useRef();
 
-    const firebaseConfig = {
-        apiKey: process.env.REACT_APP_apiKey,
-        authDomain: process.env.REACT_APP_authDomain,
-        projectId: process.env.REACT_APP_projectId,
-        storageBucket: process.env.REACT_APP_storageBucket,
-        messagingSenderId: process.env.REACT_APP_messagingSenderId,
-        appId: process.env.REACT_APP_appId
-    };
-      // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
     const fetchTeachers = async () => {
-        const firebaseConfig = {
-            apiKey: process.env.REACT_APP_apiKey,
-            authDomain: process.env.REACT_APP_authDomain,
-            projectId: process.env.REACT_APP_projectId,
-            storageBucket: process.env.REACT_APP_storageBucket,
-            messagingSenderId: process.env.REACT_APP_messagingSenderId,
-            appId: process.env.REACT_APP_appId
-        };
-          // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
         const tchrs = [];
         const querySnapshot = await getDocs(collection(db, 'teachers'))
         querySnapshot.forEach((teacher) => {
