@@ -36,11 +36,15 @@ const ClassButton = props => {
 	const name = props.info.data().name;
 	return (
 		<ListItem disablePadding>
-			<ListItemButton>
+			<ListItemButton onClick={classClicked}>
 				<ListItemText primary={name} />
 			</ListItemButton>
 		</ListItem>
 	);
+};
+
+const classClicked = () => {
+	console.log("click function working");
 };
 
 export default ClassList;
