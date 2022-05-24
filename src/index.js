@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import TeacherDirectory from './components/TeacherDirectory/TeacherDirectory';
+import Classes from './components/classes/Classes.js';
 import ErrorPage from './components/navbar/ErrorPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +16,7 @@ root.render(
       <Route path="/" element={<App />}>
         <Route path="students" element={null} />
         <Route path="teachers" element={<TeacherDirectory />} />
-        <Route path="classes" element={null} />
+        <Route path="classes" element={<Classes />} />
         <Route path="calendar" element={null} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
