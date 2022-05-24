@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+//import { initializeApp } from "firebase/app";
+//import { getFirestore } from "firebase/firestore";
 import { collection, getDocs} from "firebase/firestore";
 import { useState } from 'react';
 import TeacherList from './TeacherList';

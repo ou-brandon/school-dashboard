@@ -1,11 +1,12 @@
+/* DISCLAIMER: DOES NOT HANDLE DUPLICATES */
 import React from "react";
 import { Button } from "@mui/material";
 import { useRef } from "react";
 import { TextField } from "@mui/material";
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+//import { initializeApp } from "firebase/app";
+//import { getFirestore } from "firebase/firestore";
 import { collection, addDoc} from "firebase/firestore";
-import { getDocs } from "firebase/firestore";
+//import { getDocs } from "firebase/firestore";
 import db from "../../firebase.js"
 
 const AddTeacher = (props) => {
@@ -13,7 +14,7 @@ const AddTeacher = (props) => {
     const newTeacherID = useRef();
     const newTeacherFirstName = useRef();
     const newTeacherLastName = useRef();
-
+    /*
     const fetchTeachers = async () => {
         const tchrs = [];
         const querySnapshot = await getDocs(collection(db, 'teachers'))
@@ -23,13 +24,14 @@ const AddTeacher = (props) => {
           });
         props.setTeachers(tchrs);
     }
+    */
     const handleSubmit = async () => {
         const docRef = await addDoc(collection(db, 'teachers'), {
             id: newTeacherID.current.value,
             firstName: newTeacherFirstName.current.value,
             lastName: newTeacherLastName.current.value
         });
-        fetchTeachers();
+        props.fetchTeachers();
         console.log(docRef.id)
         
     }
