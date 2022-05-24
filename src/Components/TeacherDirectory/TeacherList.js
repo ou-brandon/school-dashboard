@@ -11,7 +11,7 @@ const TeacherList = (props) => {
                 <Typography variant='h4'>Teachers</Typography>
                 <List>
                     {props.teachers.map((teacher) => (
-                        <TeacherElement id={teacher.data().id} firstName={teacher.data().firstName} lastName={teacher.data().lastName} fetchTeachers={props.fetchTeachers}/>
+                        <TeacherElement dbID= {teacher.id} id={teacher.data().id} firstName={teacher.data().firstName} lastName={teacher.data().lastName} fetchTeachers={props.fetchTeachers}/>
                     ))}
                 </List>
             </Box>

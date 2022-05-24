@@ -1,18 +1,15 @@
 import React from 'react'
 import { Box, Typography, Card, Button } from '@mui/material';
 import db from '../../firebase.js';
-import { deleteDoc } from 'firebase/firestore';
+import { deleteDoc, setDoc, doc } from 'firebase/firestore';
 
 const TeacherElement = (props) => {
     const handleEdit = async () => {
-
+        
     }
 
     const handleDelete = async () => {
-        const delRef = await db.collection('teachers').where('id', '==', props.id).get();
-        delRef.forEach((element) => {
-            element.ref.delete();
-        })
+        await deleteDoc(doc(db, 'teachers', props.dbID));
         props.fetchTeachers();
     }
 
