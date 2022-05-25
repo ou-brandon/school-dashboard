@@ -3,7 +3,9 @@ import { Button } from "@mui/material";
 import { useRef } from "react";
 import { TextField } from "@mui/material";
 import { collection, addDoc} from 'firebase/firestore';
-import db from "firebase.js"
+import db from "../../firebase.js"
+import { getDocs } from "firebase/firestore";
+
 const AddStudent = (props) => {
     const newStudentID = useRef();
     const newStudentFirstName = useRef();

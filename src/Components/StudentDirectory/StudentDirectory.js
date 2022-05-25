@@ -3,7 +3,7 @@ import { collection, getDocs} from "firebase/firestore";
 import { useState } from 'react';
 import StudentList from './StudentList';
 import AddStudent from './AddStudent';
-import './directory.css';
+import './student_dir.css';
 import db from '../../firebase.js'
 
 const StudentDirectory = (props) => {
@@ -24,7 +24,6 @@ const StudentDirectory = (props) => {
     }, [])
     return (
         <div id='student-directory'>
-            <p>asdf</p>
             <AddStudent students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
             <StudentList students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
         </div>
