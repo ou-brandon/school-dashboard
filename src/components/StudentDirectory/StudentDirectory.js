@@ -5,6 +5,7 @@ import StudentList from './StudentList';
 import AddStudent from './AddStudent';
 import './student_dir.css';
 import db from '../../firebase.js'
+import StudentSearchBar from './StudentSearchBar';
 
 const StudentDirectory = (props) => {
     const [students, setStudents] = useState([]);
@@ -25,6 +26,7 @@ const StudentDirectory = (props) => {
     return (
         <div id='student-directory'>
             <AddStudent students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
+            <StudentSearchBar students={students} setStudents={setStudents} fetchStudents={fetchStudents} />
             <StudentList students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
         </div>
         
