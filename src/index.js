@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Classes from './components/classes/Classes.js';
 import StudentDirectory from './components/StudentDirectory/StudentDirectory.js'
 import TeacherDirectory from './components/TeacherDirectory/TeacherDirectory.js';
 import ErrorPage from './components/navbar/ErrorPage';
@@ -18,7 +19,7 @@ root.render(
         <Route path="dashboard" element={<Homepage/>} />
         <Route path="students" element={<StudentDirectory />} />
         <Route path="teachers" element={<TeacherDirectory />} />
-        <Route path="classes" element={null} />
+        <Route path="classes" element={<Classes />} />
         <Route path="calendar" element={<EventCalendar/>} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
