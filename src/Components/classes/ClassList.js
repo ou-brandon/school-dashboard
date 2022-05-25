@@ -1,5 +1,5 @@
 import db from '../../firebase.js';
-import { collection, getDocs, getDoc } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -14,6 +14,7 @@ const ClassList = props => {
 		getDocs(collection(db, 'classes'))
 			.then((allDocs) => {
 				setClassEntries(allDocs);
+				console.log(allDocs);
 				});
 	}, []);
 		
@@ -33,17 +34,7 @@ const ClassList = props => {
 const ClassButton = props => {
 	const name = props.info.data().name;
 
-	const classClicked = () => {
-		props.setClass(props.info);
-		/*
-		console.log(props.info.data());
-		let teacher = await getDoc(props.info.data().teacher);
-		console.log(teacher.data());
-		getDocs(collection(db, `classes/${props.info.id}/students`))
-			.then((allDocs) => allDocs.forEach((doc) =>
-			console.log(getDoc(doc.student).data.firstName + doc.data().grade)));
-		*/
-	};
+	const classClicked = () => props.setClass(props.info);
 
 	return (
 		<ListItem disablePadding>

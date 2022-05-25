@@ -2,12 +2,15 @@ import { Typography } from "@mui/material";
 import { getDoc } from "firebase/firestore";
 import { useEffect, useState } from 'react';
 
-const InstructorInfo = props => {
+const ClassInfo = props => {
 	const [teacher, setTeacher] = useState();
 	useEffect(() => {
 		getDoc(props.info.data().teacher)
-			.then((doc) => setTeacher(doc.data()));
-	});
+			.then((doc) => {
+				setTeacher(doc.data());	
+				console.log(doc.data());
+			});
+	}, [props.info]);
 
 	let teacherDisplay;
 	if (teacher) {
@@ -21,4 +24,4 @@ const InstructorInfo = props => {
 	);
 };
 
-export default InstructorInfo;
+export default ClassInfo;

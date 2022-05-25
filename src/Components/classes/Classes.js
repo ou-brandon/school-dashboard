@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import ClassList from './ClassList.js';
 import StudentList from './StudentList.js';
-import InstructorInfo from './InstructorInfo.js';
+import ClassInfo from './ClassInfo.js';
 
 const Classes = props => {
 	const [selectedClass, setSelectedClass] = useState();
@@ -17,7 +17,7 @@ const Classes = props => {
 				 	<ClassList setClass={setSelectedClass} />
 				</Grid>
 				<Grid item xs={2}>
-					{selectedClass ? <InstructorInfo info={selectedClass} /> : null}
+					{selectedClass ? <ClassInfo info={selectedClass} /> : null}
 					{selectedClass ? <StudentList info={selectedClass} /> : null}
 				</Grid>
 			</Grid>
