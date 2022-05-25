@@ -22,7 +22,7 @@ const AddStudent = (props) => {
         props.setStudents(stnts);
     }
     const handleSubmit = async () => {
-        const docRef = await addDoc(collection(db, 'Students'), {
+        const docRef = await addDoc(collection(db, 'students'), {
             id: newStudentID.current.value,
             firstName: newStudentFirstName.current.value,
             lastName: newStudentLastName.current.value,
