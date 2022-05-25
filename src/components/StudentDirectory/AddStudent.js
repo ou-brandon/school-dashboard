@@ -3,7 +3,9 @@ import { Button } from "@mui/material";
 import { useRef } from "react";
 import { TextField } from "@mui/material";
 import { collection, addDoc} from 'firebase/firestore';
-import db from "firebase.js"
+import db from "../../firebase.js"
+import { getDocs } from "firebase/firestore";
+
 const AddStudent = (props) => {
     const newStudentID = useRef();
     const newStudentFirstName = useRef();
@@ -20,7 +22,7 @@ const AddStudent = (props) => {
         props.setStudents(stnts);
     }
     const handleSubmit = async () => {
-        const docRef = await addDoc(collection(db, 'Students'), {
+        const docRef = await addDoc(collection(db, 'students'), {
             id: newStudentID.current.value,
             firstName: newStudentFirstName.current.value,
             lastName: newStudentLastName.current.value,
