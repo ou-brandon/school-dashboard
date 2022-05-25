@@ -3,9 +3,7 @@ import { Box, Typography, List } from '@mui/material';
 import StudentElement from './StudentElement';
 
 const StudentList = (props) => {
-   
     return (
-        
         <div>
             <Box sx={{paddingLeft: '35%', paddingRight: '35%'}}>
                 <Typography variant='h4'>Students</Typography>
@@ -17,7 +15,6 @@ const StudentList = (props) => {
             </Box>
         </div>    
     );
-
 }
 
 export default StudentList;
