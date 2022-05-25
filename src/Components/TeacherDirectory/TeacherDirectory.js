@@ -26,7 +26,6 @@ const TeacherDirectory = (props) => {
     }, [])
     return (
         <div id='teacher-directory'>
-            <p>asdf</p>
             <AddTeacher teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
             <TeacherList teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
         </div>
