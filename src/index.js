@@ -9,12 +9,13 @@ import StudentDirectory from './components/StudentDirectory/StudentDirectory.js'
 import TeacherDirectory from './components/TeacherDirectory/TeacherDirectory.js';
 import ErrorPage from './components/navbar/ErrorPage';
 import EventCalendar from './components/calendar/EventCalendar';
-
+import Homepage from './components/Homepage/Homepage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
+        <Route path="dashboard" element={<Homepage/>} />
         <Route path="students" element={<StudentDirectory />} />
         <Route path="teachers" element={<TeacherDirectory />} />
         <Route path="classes" element={null} />
