@@ -7,12 +7,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import TeacherDirectory from './components/TeacherDirectory/TeacherDirectory';
 import ErrorPage from './components/navbar/ErrorPage';
+import Homepage from './components/Homepage/Homepage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
+        <Route path="dashboard" element={<Homepage />} />
         <Route path="students" element={null} />
         <Route path="teachers" element={<TeacherDirectory />} />
         <Route path="classes" element={null} />
