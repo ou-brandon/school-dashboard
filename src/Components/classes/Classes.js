@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ClassList from './ClassList.js';
 import StudentList from './StudentList.js';
 import ClassInfo from './ClassInfo.js';
+import AddClass from './AddClass.js';
 
 const Classes = props => {
 	const [selectedClass, setSelectedClass] = useState();
@@ -32,6 +33,14 @@ const Classes = props => {
 								</Paper>	
 							</Grid>
 						</Grid>
+					</Grid>
+					<Grid item xs={3}>
+
+					</Grid>
+					<Grid item xs={3}>
+						<Paper elevation={4}>
+							<AddClass />
+						</Paper>
 					</Grid>
 				</Grid>
 			</Box>
