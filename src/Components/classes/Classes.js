@@ -38,6 +38,7 @@ const Classes = props => {
 
 					</Grid>
 					<Grid item xs={3}>
+
 					</Grid>
 				</Grid>
 			</Box>
