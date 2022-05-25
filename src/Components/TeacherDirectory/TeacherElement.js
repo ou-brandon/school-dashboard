@@ -49,7 +49,7 @@ const TeacherElement = (props) => {
                 <DialogActions>
                     <Button onClick={handleSubmit}>Submit</Button>
                     <Button onClick={handleClose}>Cancel</Button>
-                </DialogActions>
+                </DialogActions>x
             </Dialog>
             <Card variant='outlined' sx={{margin: '10px', padding: '10px', boxShadow: 3, ':hover': {boxShadow: 13}}}>
                 <Typography variant='h6'>{props.firstName + " " + props.lastName}</Typography>
