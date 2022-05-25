@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 
-const StudentSearchBar = (props) => {
+const StudentSearch = (props) => {
     const [queryExist, setQueryExist] = useState(false);
     const searchQuery = useRef();
 
@@ -46,4 +46,4 @@ const StudentSearchBar = (props) => {
     );
 }
 
-export default TeacherSearchBar; 
+export default StudentSearch; 
