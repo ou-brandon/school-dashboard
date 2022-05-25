@@ -6,15 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import TeacherDirectory from './components/TeacherDirectory/TeacherDirectory';
+<<<<<<< HEAD
+import ErrorPage from './components/navbar/ErrorPage';\
+=======
 import ErrorPage from './components/navbar/ErrorPage';
 import Homepage from './components/Homepage/Homepage';
+>>>>>>> e4f197ad53000e06151bd3b0807683561d89e1cc
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
+<<<<<<< HEAD
+=======
         <Route path="dashboard" element={<Homepage />} />
+>>>>>>> e4f197ad53000e06151bd3b0807683561d89e1cc
         <Route path="students" element={null} />
         <Route path="teachers" element={<TeacherDirectory />} />
         <Route path="classes" element={null} />
