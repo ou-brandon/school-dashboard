@@ -5,7 +5,9 @@ import { Typography } from '@mui/material';
 const Navbar = props => {
 	return (
 		<>
-			<Typography variant="h3">TJE Dashboard</Typography>
+			<Button component={Link} to="/">
+				<Typography variant="h3">TJE Dashboard</Typography>
+			</Button>
 			<nav>
 				<Button variant="text" component={Link} to="/students">Students</Button>
 				<Button variant="text" component={Link} to="/teachers">Teachers</Button>
