@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+//import { initializeApp } from "firebase/app";
+//import { getFirestore } from "firebase/firestore";
 import { collection, getDocs} from "firebase/firestore";
 import { useState } from 'react';
 import TeacherList from './TeacherList';
 import AddTeacher from './AddTeacher';
 import './directory.css';
 import db from '../../firebase.js'
+import TeacherSearchBar from './TeacherSearchBar';
 
 const TeacherDirectory = (props) => {
     const [teachers, setTeachers] = useState([]);
@@ -26,8 +27,8 @@ const TeacherDirectory = (props) => {
     }, [])
     return (
         <div id='teacher-directory'>
-            <p>asdf</p>
             <AddTeacher teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
+            <TeacherSearchBar teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers} />
             <TeacherList teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
         </div>
         
