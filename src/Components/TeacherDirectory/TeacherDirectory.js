@@ -7,6 +7,7 @@ import TeacherList from './TeacherList';
 import AddTeacher from './AddTeacher';
 import './directory.css';
 import db from '../../firebase.js'
+import TeacherSearchBar from './TeacherSearchBar';
 
 const TeacherDirectory = (props) => {
     const [teachers, setTeachers] = useState([]);
@@ -27,6 +28,7 @@ const TeacherDirectory = (props) => {
     return (
         <div id='teacher-directory'>
             <AddTeacher teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
+            <TeacherSearchBar teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers} />
             <TeacherList teachers={teachers} setTeachers={setTeachers} fetchTeachers={fetchTeachers}/>
         </div>
         
