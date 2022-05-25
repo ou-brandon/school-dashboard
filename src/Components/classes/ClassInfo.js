@@ -17,9 +17,12 @@ const ClassInfo = props => {
 		teacherDisplay = <Typography variant="body1">Taught by {teacher.lastName}, {teacher.firstName}</Typography>;
 	}
 
+	let roomDisplay = <Typography variant="body1">Taught in {props.info.data().room}</Typography>
+
 	return (
 		<>
 			{teacherDisplay}
+			{roomDisplay}
 		</>
 	);
 };
