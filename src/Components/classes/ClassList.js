@@ -19,7 +19,7 @@ const ClassList = props => {
 		
 	if (classEntries)
 		classEntries.forEach((doc) => 
-			classes.push(<ClassButton info={doc} key={doc.id} />));
+			classes.push(<ClassButton info={doc} key={doc.id} setClass={props.setClass}/>));
 
 	return (
 		<>
@@ -33,10 +33,16 @@ const ClassList = props => {
 const ClassButton = props => {
 	const name = props.info.data().name;
 
-	const classClicked = async () => {
+	const classClicked = () => {
+		props.setClass(props.info);
+		/*
 		console.log(props.info.data());
 		let teacher = await getDoc(props.info.data().teacher);
 		console.log(teacher.data());
+		getDocs(collection(db, `classes/${props.info.id}/students`))
+			.then((allDocs) => allDocs.forEach((doc) =>
+			console.log(getDoc(doc.student).data.firstName + doc.data().grade)));
+		*/
 	};
 
 	return (
