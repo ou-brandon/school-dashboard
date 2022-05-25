@@ -40,7 +40,7 @@ const StudentButton = props => {
 			})
 	}, [props.info])
 	
-	let firstName, lastName;
+	let firstName, lastName = null;
 	if (student) {
 		firstName = student.data().firstName;
 		lastName = student.data().lastName;
@@ -49,7 +49,7 @@ const StudentButton = props => {
 	return (
 		<ListItem disablePadding>
 			<ListItemButton>
-				<ListItemText primary={`${lastName}, ${firstName}`} />
+				{student ? <ListItemText primary={`${lastName}, ${firstName}`} /> : null}
 			</ListItemButton>			
 		</ListItem>
 	)
