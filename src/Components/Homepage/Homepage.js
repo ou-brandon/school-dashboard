@@ -1,57 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Box } from '@mui/system';
-import { CardActionArea, CardContent, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { Grid } from '@mui/material';
-import { Card } from '@mui/material';
+import HomepageComponent from './HomepageComponent';
 
 const Homepage = (props) => {
     return (
         <>
-            <Box>
-                <Typography variant='h6'>Welcome to Your Dashboard!</Typography>
+            <Box sx={{paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%'}}>
+                <Typography variant='h4'>Welcome to Your Dashboard!</Typography>
+                <br></br>
                 <Grid container spacing={{ xs:4, md:4}}>
                     <Grid item xs={6}>
-
-                        <Card>
-                            <CardActionArea component={Link} to='/students'>
-                                <Typography variant='h4'>Student Directory</Typography>
-                                <CardContent>
-                                    <Typography variant='h6'>description</Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            
-                        </Card>
+                        <HomepageComponent link='/students' title='Student Directory' description='description'/>                       
                     </Grid>
                     <Grid item xs={6}>
-                        <Card>
-                            <CardActionArea component={Link} to='/teachers'>
-                                <Typography variant='h4'>Teacher Directory</Typography>
-                                <CardContent>
-                                    <Typography variant='h6'>description</Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                        <HomepageComponent link='/teachers' title='Teacher Directory' description='description'/> 
                     </Grid>
                     <Grid item xs={6}>
-                        <Card>
-                            <CardActionArea component={Link} to='/classes'>
-                                <Typography variant='h4'>Classes</Typography>
-                                <CardContent>
-                                    <Typography variant='h6'>description</Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                        <HomepageComponent link='/classes' title='Classes' description='description'/> 
                     </Grid>
                     <Grid item xs={6}>
-                        <Card>
-                        <CardActionArea component={Link} to='/calendar'>
-                                <Typography variant='h4'>Calendar</Typography>
-                                <CardContent>
-                                    <Typography variant='h6'>description</Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                        <HomepageComponent link='/calendar' title='School Calendar' description='description'/> 
                     </Grid>
                 </Grid>
             </Box>
