@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { TextField } from '@mui/material';
 import { useRef } from 'react';
 
-const studentElement = (props) => {
+const StudentElement = (props) => {
 
     const idRef = useRef();
     const firstNameRef = useRef();
