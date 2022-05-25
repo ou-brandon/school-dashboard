@@ -9,7 +9,7 @@ const StudentList = (props) => {
                 <Typography variant='h4'>Students</Typography>
                 <List>
                     {props.students.map((student) => (
-                        <StudentElement dbID= {student.id} id={student.data().id} firstName={student.data().firstName} lastName={student.data().lastName} fetchStudents={props.fetchStudents}/>
+                        <StudentElement dbID= {student.id} id={student.data().id} firstName={student.data().firstName} lastName={student.data().lastName} grade = {student.data().grade} fetchStudents={props.fetchStudents}/>
                     ))}
                 </List>
             </Box>

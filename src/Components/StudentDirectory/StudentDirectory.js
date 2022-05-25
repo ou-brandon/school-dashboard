@@ -10,13 +10,13 @@ const StudentDirectory = (props) => {
     const [students, setStudents] = useState([]);
     const fetchStudents = async () => {
 
-        const tchrs = [];
+        const stnts = [];
         const querySnapshot = await getDocs(collection(db, 'students'))
         querySnapshot.forEach((student) => {
-            tchrs.push(student);
-            console.log(student.id + " " + student.data().id + " " + student.data().firstName + " " + student.data().lastName);
+            stnts.push(student);
+            console.log(student.id + " " + student.data().id + " " + student.data().firstName + " " + student.data().lastName + " " + student.data().grade);
           });
-        setStudents(tchrs);
+        setStudents(stnts);
     }
 
     useEffect(()=>{

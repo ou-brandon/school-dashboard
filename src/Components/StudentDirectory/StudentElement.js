@@ -12,6 +12,7 @@ const studentElement = (props) => {
     const idRef = useRef();
     const firstNameRef = useRef();
     const lastNameRef = useRef();
+    const gradeRef = useRef();
 
     const [open, setOpen] = useState(false);
     const handleEdit = async () => {
@@ -30,7 +31,8 @@ const studentElement = (props) => {
         setDoc(doc(db, "students", props.dbID), {
             id: idRef.current.value,
             firstName: firstNameRef.current.value,
-            lastName: lastNameRef.current.value
+            lastName: lastNameRef.current.value,
+            grade: gradeRef.current.value
         })
         props.fetchStudents();
         handleClose();
@@ -45,6 +47,7 @@ const studentElement = (props) => {
                     <TextField margin="dense" label='First Name' defaultValue={props.firstName} inputRef={firstNameRef}/>
                     <TextField margin="dense" label='Last Name' defaultValue={props.lastName} inputRef={lastNameRef}/>
                     <TextField margin="dense" label='ID' defaultValue={props.id} inputRef={idRef}/>
+                    <TextField margin="dense" label='Grade' defaultValue={props.grade} inputRef={gradeRef}/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleSubmit}>Submit</Button>
