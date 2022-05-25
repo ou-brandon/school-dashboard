@@ -20,7 +20,7 @@ const StudentElement = (props) => {
     }
 
     const handleDelete = async () => {
-        await deleteDoc(doc(db, 'Students', props.dbID));
+        await deleteDoc(doc(db, 'students', props.dbID));
         props.fetchStudents();
     }
 
@@ -57,6 +57,7 @@ const StudentElement = (props) => {
             <Card variant='outlined' sx={{margin: '10px', padding: '10px', boxShadow: 3, ':hover': {boxShadow: 13}}}>
                 <Typography variant='h6'>{props.firstName + " " + props.lastName}</Typography>
                 <Typography variant='subtitle2'>ID: {props.id}</Typography>
+                <Typography variant='subtitle2'>Grade: {props.grade}</Typography>
                 <Box sx={{display: 'flex'}}>
                     <Button sx={{width: '90%'}} variant='outlined' onClick={handleEdit}>Edit Student</Button>
                     <Button variant='outlined' color='error' onClick={handleDelete}>Delete Student</Button>
