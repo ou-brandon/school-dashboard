@@ -1,5 +1,5 @@
 import db from '../../firebase.js';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, getDoc } from 'firebase/firestore';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -18,10 +18,8 @@ const ClassList = props => {
 	}, []);
 		
 	if (classEntries)
-		classEntries.forEach((doc) => {
-			console.log(doc.data());
-			classes.push(<ClassButton info={doc} key={doc.id} />);
-		});
+		classEntries.forEach((doc) => 
+			classes.push(<ClassButton info={doc} key={doc.id} />));
 
 	return (
 		<>
@@ -34,6 +32,13 @@ const ClassList = props => {
 
 const ClassButton = props => {
 	const name = props.info.data().name;
+
+	const classClicked = async () => {
+		console.log(props.info.data());
+		let teacher = await getDoc(props.info.data().teacher);
+		console.log(teacher.data());
+	};
+
 	return (
 		<ListItem disablePadding>
 			<ListItemButton onClick={classClicked}>
@@ -43,8 +48,5 @@ const ClassButton = props => {
 	);
 };
 
-const classClicked = () => {
-	console.log("click function working");
-};
 
 export default ClassList;
