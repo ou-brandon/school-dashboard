@@ -20,7 +20,7 @@ const ClassList = props => {
 		
 	if (classEntries)
 		classEntries.forEach((doc) => 
-			classes.push(<ClassButton info={doc} key={doc.id} setClass={props.setClass}/>));
+			classes.push(<ClassButton info={doc} key={doc.id} id={doc.id} setClass={props.setClass} setDelete={props.setDelete}/>));
 
 	return (
 		<>
@@ -33,8 +33,10 @@ const ClassList = props => {
 
 const ClassButton = props => {
 	const name = props.info.data().name;
-
-	const classClicked = () => props.setClass(props.info);
+	function classClicked() {
+		props.setDelete(props.id);
+		props.setClass(props.info);
+	}
 
 	return (
 		<ListItem disablePadding>
