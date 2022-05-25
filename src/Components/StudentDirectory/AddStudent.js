@@ -8,13 +8,14 @@ const AddStudent = (props) => {
     const newStudentID = useRef();
     const newStudentFirstName = useRef();
     const newStudentLastName = useRef();
+    const newStudentGrade = useRef();
 
     const fetchStudents = async () => {
         const stnts = [];
         const querySnapshot = await getDocs(collection(db, 'students'))
         querySnapshot.forEach((student) => {
             stnts.push(student);
-            console.log(student.id + " " + student.data().id + " " + student.data().firstName + " " + student.data().lastName);
+            console.log(student.id + " " + student.data().id + " " + student.data().firstName + " " + student.data().lastName + " " + student.data().grade);
           });
         props.setStudents(stnts);
     }
@@ -22,7 +23,8 @@ const AddStudent = (props) => {
         const docRef = await addDoc(collection(db, 'Students'), {
             id: newStudentID.current.value,
             firstName: newStudentFirstName.current.value,
-            lastName: newStudentLastName.current.value
+            lastName: newStudentLastName.current.value,
+            grade: newStudentGrade.current.value
         });
         fetchStudents();
         console.log(docRef.id)
@@ -34,6 +36,7 @@ const AddStudent = (props) => {
             <TextField label='First Name' inputRef={newStudentFirstName}/>
             <TextField label='Last Name' inputRef={newStudentLastName}/>
             <TextField label='Student ID' inputRef={newStudentID}/>
+            <TextField label='Grade' inputRef={newStudentGrade}/>
             <br></br>
             <Button variant='contained' onClick={handleSubmit}>
                 Add Student
