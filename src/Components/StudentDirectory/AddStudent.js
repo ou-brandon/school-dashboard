@@ -5,19 +5,18 @@ import { TextField } from "@mui/material";
 import { collection, addDoc} from 'firebase/firestore';
 import db from "firebase.js"
 const AddStudent = (props) => {
-    
     const newStudentID = useRef();
     const newStudentFirstName = useRef();
     const newStudentLastName = useRef();
 
     const fetchStudents = async () => {
-        const tchrs = [];
+        const stnts = [];
         const querySnapshot = await getDocs(collection(db, 'students'))
         querySnapshot.forEach((student) => {
-            tchrs.push(student);
+            stnts.push(student);
             console.log(student.id + " " + student.data().id + " " + student.data().firstName + " " + student.data().lastName);
           });
-        props.setStudents(tchrs);
+        props.setStudents(stnts);
     }
     const handleSubmit = async () => {
         const docRef = await addDoc(collection(db, 'Students'), {
