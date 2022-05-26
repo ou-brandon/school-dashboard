@@ -4,8 +4,8 @@
    
   body {
     font-family: sans-serif;
-    margin: 3rem;
     background-color: #dfdfdf;
+    margin: 0px !important;
   }
    
   h1, h2 {

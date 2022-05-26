@@ -54,9 +54,9 @@ const TeacherElement = (props) => {
             <Card variant='outlined' sx={{margin: '10px', padding: '10px', boxShadow: 3, ':hover': {boxShadow: 13}}}>
                 <Typography variant='h6'>{props.firstName + " " + props.lastName}</Typography>
                 <Typography variant='subtitle2'>ID: {props.id}</Typography>
-                <Box sx={{display: 'flex'}}>
-                    <Button sx={{width: '90%'}} variant='outlined' onClick={handleEdit}>Edit Teacher</Button>
-                    <Button variant='outlined' color='error' onClick={handleDelete}>Delete Teacher</Button>
+                <Box sx={{display: 'flex', height: '50px'}}>
+                    <Button sx={{width: '90%'}} variant='contained' onClick={handleEdit}>Edit Teacher</Button>
+                    <Button variant='contained' color='error' onClick={handleDelete}>Delete Teacher</Button>
                 </Box>
             
             </Card>
