@@ -48,7 +48,7 @@ const AddStudents = props => {
 		console.log('document written with id: ', docRef.id);
 		setOpen(false);
 		setValue(null);
-		props.onAdd(docRef.id);
+		props.onChange(docRef.id);
 	};
 
 	return (
