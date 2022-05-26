@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -7,8 +8,10 @@ import Backdrop from "./Backdrop";
 import db from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Event from "./Event";
+import { Box, Typography, Card } from "@mui/material";
 
-function EventCalendar() {
+
+const EventCalendar = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function deleteHandler() {
@@ -62,33 +65,46 @@ function EventCalendar() {
 
   return (
     <div>
-      <Calendar value={date} onClickDay={updateEvents} />
-      <h1>{dayjs(date).format("MM/DD/YY").toString()}</h1>
-      {events.map((event) => (
-        <Event
-          key={event.id}
-          id={event.id}
-          title={event.title}
-          description={event.description}
-          updateEvents={updateEvents}
-          badDate={date}
-        />
-      ))}
-      <div>
-        <button className="btnAdd" onClick={deleteHandler}>
-          Add Event
-        </button>
+      <Card sx={{bgcolor:'lightskyblue', marginTop: '2%', marginLeft: '25%', marginRight: '25%', paddingBottom: '15%', boxShadow: 7}}>
+        <Typography variant='h3'>Event Calendar</Typography>
+        <Box sx={{display: 'flex', justifyContent: 'space-around', padding:'25px'}}>
+          <Box>
+            <Calendar sx={{boxShadow: 3, height: '400px' }} value={date} onClickDay={updateEvents} />
+          </Box>
+          
+          <div>
+            <h1>{dayjs(date).format("MM/DD/YY").toString()}</h1>
+            {events.map((event) => (
+              <Event
+                key={event.id}
+                id={event.id}
+                title={event.title}
+                description={event.description}
+                updateEvents={updateEvents}
+                badDate={date}
+              />
+            ))}
+            <div>
+              <button className="btnAdd" onClick={deleteHandler}>
+                Add Event
+              </button>
+            </div>
+            {modalIsOpen && (
+              <Modal
+                onClick={closeHandler}
+                updateEvents={updateEvents}
+                date={dayjs(date).format("MM/DD/YY").toString()}
+                badDate={date}
+              />
+            )}
+            {modalIsOpen && <Backdrop onClick={closeHandler} />}
+          </div>
+        </Box>
+      </Card>
+      
+      
       </div>
-      {modalIsOpen && (
-        <Modal
-          onClick={closeHandler}
-          updateEvents={updateEvents}
-          date={dayjs(date).format("MM/DD/YY").toString()}
-          badDate={date}
-        />
-      )}
-      {modalIsOpen && <Backdrop onClick={closeHandler} />}
-    </div>
+      
   );
 }
 
