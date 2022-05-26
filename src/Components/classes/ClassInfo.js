@@ -14,10 +14,10 @@ const ClassInfo = props => {
 
 	let teacherDisplay;
 	if (teacher) {
-		teacherDisplay = <Typography variant="body1">Taught by <strong>{teacher.lastName}, {teacher.firstName}</strong></Typography>;
+		teacherDisplay = <Typography variant="h6">Taught by <strong>{teacher.lastName}, {teacher.firstName}</strong></Typography>;
 	}
 
-	let roomDisplay = <Typography variant="body1">Taught in <strong>{props.info.data().room}</strong></Typography>
+	let roomDisplay = <Typography variant="h6">Taught in <strong>{props.info.data().room}</strong></Typography>
 
 	return (
 		<>
