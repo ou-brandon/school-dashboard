@@ -11,7 +11,7 @@ const StudentList = props => {
 				setStudentsData(allDocs);
 				console.log(allDocs);
 			});
-	}, [props.info, props.addedStudent])
+	}, [props.info, props.changedStudent])
 
 	let students = [];
 	if (studentsData)
@@ -42,10 +42,12 @@ const StudentButton = props => {
 		firstName = student.data().firstName;
 		lastName = student.data().lastName;
 	}
+
+	const studentClicked = (event) => props.setStudent(props.info);
 	
 	return (
 		<ListItem disablePadding>
-			<ListItemButton>
+			<ListItemButton onClick={studentClicked}>
 				{student ? <ListItemText primary={`${lastName}, ${firstName}`} /> : null}
 			</ListItemButton>			
 		</ListItem>
