@@ -20,7 +20,7 @@ const ClassList = props => {
 		
 	if (classEntries)
 		classEntries.forEach((doc) => 
-			classes.push(<ClassButton info={doc} key={doc.id} id={doc.id} setClass={props.setClass} setDelete={props.setDelete}/>));
+			classes.push(<ClassButton info={doc} key={doc.id} id={doc.id} setClass={props.setClass} get={props.getId}/>));
 
 	return (
 		<>
@@ -34,8 +34,9 @@ const ClassList = props => {
 const ClassButton = props => {
 	const name = props.info.data().name;
 	function classClicked() {
-		props.setDelete(props.id);
 		props.setClass(props.info);
+		props.get(props.id);
+		console.log(props.id);
 	}
 
 	return (

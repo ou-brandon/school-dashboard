@@ -11,7 +11,10 @@ let documentId;
 const Classes = (props) => {
   const [selectedClass, setSelectedClass] = useState();
   
-  const [deletedClass, setDeletedClass] = useState();
+function getIdLast(thisId) {
+	  documentId = thisId;
+	  console.log(documentId);
+  }
 
   return (
     <>
@@ -20,7 +23,7 @@ const Classes = (props) => {
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <Paper elevation={4}>
-              <ClassList setDelete={setDeletedClass} setClass={setSelectedClass} />
+              <ClassList getId={getIdLast} setClass={setSelectedClass} />
             </Paper>
           </Grid>
           <Grid item xs={3}>
@@ -36,7 +39,7 @@ const Classes = (props) => {
                 </Paper>
               </Grid>
               <Grid item xs={12}>
-                {selectedClass ? <DeleteClass deleted={setDeletedClass} id={deletedClass}/> : null}
+                {selectedClass ? <DeleteClass id={documentId}/> : null}
               </Grid>
             </Grid>
           </Grid>
