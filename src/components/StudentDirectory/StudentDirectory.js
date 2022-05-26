@@ -38,8 +38,8 @@ const StudentDirectory = (props) => {
             </div>
             <div id='student-directory'>
                 <Box sx={{marginLeft: '35%', marginRight: '35%', marginTop: '1%', marginBottom: '1%'}} >
-                    <Card>
-                        <Typography sx={{paddingTop: '10px'}} variant='h4'>Students</Typography>
+                    <Card sx={{marginBottom: '10px'}}>
+                        <Typography sx={{paddingTop: '10px', paddingBottom: '10px'}} variant='h4'>Students</Typography>
                     </Card>
                     
                     <StudentSearch students={students} setStudents={setStudents} fetchStudents={fetchStudents} />
