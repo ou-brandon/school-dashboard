@@ -38,7 +38,9 @@ const Classes = props => {
 
 					</Grid>
 					<Grid item xs={3}>
-
+						<Paper elevation={4}>
+							<AddClass />
+						</Paper>
 					</Grid>
 				</Grid>
 			</Box>
