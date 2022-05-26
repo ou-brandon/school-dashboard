@@ -1,7 +1,8 @@
 import db from "../../firebase";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { useRef } from "react";
-
+import { Typography } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 function EditModal(props) {
     const textFieldRefTitle = useRef(null);
     const textFieldRefDescription = useRef(null);
@@ -35,6 +36,18 @@ function EditModal(props) {
 
   return (
     <div className="modal">
+      <Typography variant='h5'>Edit/Remove Event</Typography>
+      <TextField sx={{margin: '10px'}} label='Event Title' InputLabelProps={{shrink:true}} inputRef={textFieldRefTitle} />
+        <br></br>
+        <TextField sx={{margin: '10px'}} label='Event Description' InputLabelProps={{shrink:true}} inputRef={textFieldRefDescription} />
+        <br></br>
+        <Button sx={{margin:'10px'}} variant='contained' color='error' className="btn btn--alt" onClick={onDelete}>
+          Delete
+        </Button>
+        <Button sx={{margin:'10px'}} variant='contained' color='success' className="btn btn--altC" onClick={editData}>
+          Save Edits
+        </Button>
+      {/*
       <h3>Edit/Remove Event</h3>
       <div>
         <form>
@@ -50,6 +63,7 @@ function EditModal(props) {
       <button className="btn btn--altC" onClick={editData}>
         Confirm
       </button>
+      */}
     </div>
   );
 }

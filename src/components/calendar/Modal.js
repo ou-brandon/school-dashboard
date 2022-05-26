@@ -1,7 +1,9 @@
 import db from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useRef } from "react";
-
+import TextField from "@mui/material/TextField";
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 function Modal(props) {
   function onCancal() {
     props.onClick();
@@ -28,7 +30,8 @@ function Modal(props) {
 
   return (
     <div className="modal">
-      <h3>Input Parameters</h3>
+      <Typography variant='h5'>Add a New Event</Typography>
+      {/*
       <div>
         <form>
           <input type="text" ref={textFieldRefTitle} />
@@ -43,6 +46,17 @@ function Modal(props) {
       <button className="btn btn--altC" onClick={addEvent}>
         Confirm
       </button>
+        */}
+        <TextField label='Event Title' inputRef={textFieldRefTitle} />
+        <br></br>
+        <TextField label='Event Description' inputRef={textFieldRefDescription} />
+        <br></br>
+        <Button variant='contained' className="btn btn--alt" onClick={onCancal}>
+          Cancel
+        </Button>
+        <Button variant='contained' color='success' className="btn btn--altC" onClick={addEvent}>
+          Confirm
+        </Button>
     </div>
   );
 }
