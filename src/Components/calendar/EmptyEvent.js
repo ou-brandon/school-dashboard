@@ -10,7 +10,7 @@ function EmptyEvent(props) {
         ":hover": { boxShadow: 9 },
       }}
     >
-      <h3>No Events Planned for Today</h3>
+      <h3>No Events Planned for This Day</h3>
       <p>Click the "Add Event" button underneath the calendar to add events</p>
     </Card>
   );
