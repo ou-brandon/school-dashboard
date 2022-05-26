@@ -54,25 +54,40 @@ const AddClass = props => {
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={style}>
 				 	<FormControl fullWidth>
-						<TextField required variant="outlined" label="Class Name" id="className" onChange={handleName} />
-						<TextField required variant="outlined" label="Room" id="classRoom" onChange={handleRoom} />
+						<TextField
+							required
+							variant="outlined"
+							label="Class Name"
+							id="className" 
+							onChange={handleName} 
+							sx={{ mb: 1 }}
+						/>
+						<TextField 
+							required
+							variant="outlined"
+							label="Room"
+							id="classRoom"
+							onChange={handleRoom} 
+							sx={{ my: 1 }}
+						/>
 						{teachers ? 
-							<TextField 
-								select 
-								id="classTeacher" 
-								value={classTeacher} 
-								label="Teacher" 
-								onChange={handleTeacher}
-							>
-								{teachers.map((teacher) => {
-									return (<MenuItem value={`teachers/${teacher.id}`} key={teacher.id}>
-										{teacher.data().lastName + ', ' + teacher.data().firstName}
-									</MenuItem>);
-								}
-								)}
-							</TextField>
+						<TextField 
+							select 
+							id="classTeacher" 
+							value={classTeacher} 
+							label="Teacher" 
+							onChange={handleTeacher}
+							sx={{ my: 1 }}
+						>
+							{teachers.map((teacher) => {
+								return (<MenuItem value={`teachers/${teacher.id}`} key={teacher.id}>
+									{teacher.data().lastName + ', ' + teacher.data().firstName}
+								</MenuItem>);
+							}
+							)}
+						</TextField>
 						: null}
-						<Button fullWidth variant="contained" onClick={handleSubmit}>Add Class</Button>
+						<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 1 }}>Add Class</Button>
 					</FormControl>
 				</Box>
 			</Modal>

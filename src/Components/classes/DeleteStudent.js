@@ -48,7 +48,7 @@ const DeleteStudent = props => {
 						<Typography variant="body1">Click outside this box to cancel.</Typography>
 					</>
 				: null }
-				<Button variant="contained" color="error" onClick={handleSubmit}>Delete Student</Button>
+				<Button variant="contained" color="error" onClick={handleSubmit}sx={{ mt: 1}}>Delete Student</Button>
 				</Box>
 			</Modal>
 		</>

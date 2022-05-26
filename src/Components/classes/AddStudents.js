@@ -65,10 +65,11 @@ const AddStudents = props => {
 								value={value}
 								onChange={(event, newValue) => setValue(newValue)}
 								renderInput={(params) => <TextField {...params} label="Student" />}
+								sx={{ mb: 1 }}
 							/>
 						: null}
 					</FormControl>
-					<Button variant="contained" onClick={handleSubmit}>Add Student</Button>
+					<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 1 }}>Add Student</Button>
 				</Box>
 			</Modal>
 		</>
