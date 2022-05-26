@@ -7,11 +7,12 @@ import StudentList from "./StudentList.js";
 import ClassInfo from "./ClassInfo.js";
 import AddClass from "./AddClass.js";
 import DeleteClass from "./DeleteClass.js";
-let documentId;
 const Classes = (props) => {
   const [selectedClass, setSelectedClass] = useState();
   
   const [deletedClass, setDeletedClass] = useState();
+
+  const [updateClass, setUpdatedClass] = useState(false);
 
   return (
     <>
@@ -20,7 +21,7 @@ const Classes = (props) => {
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <Paper elevation={4}>
-              <ClassList setDelete={setDeletedClass} setClass={setSelectedClass} />
+              <ClassList update={updateClass} setUpdate={setUpdatedClass} setDelete={setDeletedClass} setClass={setSelectedClass} />
             </Paper>
           </Grid>
           <Grid item xs={3}>
@@ -36,7 +37,7 @@ const Classes = (props) => {
                 </Paper>
               </Grid>
               <Grid item xs={12}>
-                {selectedClass ? <DeleteClass deleted={setDeletedClass} id={deletedClass}/> : null}
+                {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
               </Grid>
             </Grid>
           </Grid>
