@@ -10,10 +10,10 @@ import { collection, getDocs } from "firebase/firestore";
 import Event from "./Event";
 import { Box, Typography, Card, Grid } from "@mui/material";
 import background from "./img.jpg";
-import styles from "./calendar.css";
 import "./calendar.css";
+import EmptyEvent from "./EmptyEvent";
 
-const EventCalendar = (props) => {
+const EventCalendar = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function deleteHandler() {
@@ -28,6 +28,8 @@ const EventCalendar = (props) => {
 
   const [events, setEvents] = useState([]);
 
+  const [nothing, setNothing] = useState(false);
+
   useEffect(() => {
     const events = [];
     getDocs(collection(db, "events")).then((allEvents) => {
@@ -37,10 +39,14 @@ const EventCalendar = (props) => {
       console.log(dayjs(date).format("MM/DD/YY").toString());
       for (let i = 0; i < events.length; i++) {
         if (events[i].date !== dayjs(date).format("MM/DD/YY").toString()) {
+          setNothing(false);
           events.splice(i, 1);
           i--;
           console.log("We actually did something");
         }
+      }
+      if (events.length === 0) {
+        setNothing(true);
       }
       setEvents(events);
     });
@@ -56,10 +62,14 @@ const EventCalendar = (props) => {
       console.log(dayjs(date).format("MM/DD/YY").toString());
       for (let i = 0; i < events.length; i++) {
         if (events[i].date !== dayjs(date).format("MM/DD/YY").toString()) {
+          setNothing(false);
           events.splice(i, 1);
           i--;
           console.log("We actually did something");
         }
+      }
+      if (events.length === 0) {
+        setNothing(true);
       }
       setEvents(events);
     });
@@ -96,6 +106,7 @@ const EventCalendar = (props) => {
             <Grid item xs={6}>
               <Box sx={{ justifyContent: "center", padding: "5px" }}>
                 <h1>{dayjs(date).format("MM/DD/YY").toString()}</h1>
+                {nothing && <EmptyEvent/>}
                 {events.map((event) => (
                   <Event
                     key={event.id}
