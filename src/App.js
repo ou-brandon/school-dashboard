@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Outlet />
-      {useLocation().pathname == '/' && <Homepage />}
+      {useLocation().pathname === '/' && <Homepage />}
     </div>
   );
 }
