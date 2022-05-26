@@ -23,12 +23,20 @@ const Classes = (props) => {
       <Typography variant="h4">Classes</Typography>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid item xs={3}>
-            <Paper elevation={4}>
-              <ClassList update={updateClass} setUpdate={setUpdatedClass} setDelete={setDeletedClass} setClass={setSelectedClass} />
-            </Paper>
+		  <Grid item xs={2}></Grid>
+          <Grid item xs={4}>
+			<Grid container spacing={2}>
+				<Grid item xs={12}>
+				  <Paper elevation={4}>
+					<ClassList update={updateClass} setUpdate={setUpdatedClass} setDelete={setDeletedClass} setClass={setSelectedClass} />
+				  </Paper>
+				</Grid>
+				<Grid item xs={12}>
+				  <AddClass onAdd={setUpdatedClass} />
+				</Grid>
+			</Grid>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={4}>
@@ -51,12 +59,7 @@ const Classes = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={3}></Grid>
-          <Grid item xs={3}>
-			<Paper elevation={4}>
-			  <AddClass onAdd={setUpdatedClass} />
-			</Paper>
-		  </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
       </Box>
     </>

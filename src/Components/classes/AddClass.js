@@ -50,7 +50,7 @@ const AddClass = props => {
 
 	return (
 		<>
-			<Button variant="contained" onClick={handleOpen}>Add Class</Button>
+			<Button fullWidth variant="contained" onClick={handleOpen}>Add Class</Button>
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={style}>
 				 	<FormControl fullWidth>
@@ -72,7 +72,7 @@ const AddClass = props => {
 								)}
 							</TextField>
 						: null}
-						<Button variant="contained" onClick={handleSubmit}>Add Class</Button>
+						<Button fullWidth variant="contained" onClick={handleSubmit}>Add Class</Button>
 					</FormControl>
 				</Box>
 			</Modal>
