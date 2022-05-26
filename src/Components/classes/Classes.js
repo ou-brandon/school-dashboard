@@ -14,6 +14,8 @@ const Classes = (props) => {
   const [deletedClass, setDeletedClass] = useState();
   const [updateClass, setUpdatedClass] = useState(false);
 
+  const [addedStudent, setAddedStudent] = useState();
+
   return (
     <>
       <Typography variant="h4">Classes</Typography>
@@ -33,15 +35,15 @@ const Classes = (props) => {
               </Grid>
               <Grid item xs={12}>
                 <Paper elevation={4}>
-                  {selectedClass ? <StudentList info={selectedClass} /> : null}
+                  {selectedClass ? <StudentList info={selectedClass} addedStudent={addedStudent} /> : null}
                 </Paper>
               </Grid>
+			  <Grid item xs={12}>
+				{selectedClass ? <AddStudents info={selectedClass} onAdd={setAddedStudent} /> : null}
+			  </Grid>
               <Grid item xs={12}>
                 {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
               </Grid>
-			  <Grid item xs={12}>
-				{selectedClass ? <AddStudents info={selectedClass} /> : null}
-			  </Grid>
             </Grid>
           </Grid>
           <Grid item xs={3}></Grid>
