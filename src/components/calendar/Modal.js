@@ -47,14 +47,14 @@ function Modal(props) {
         Confirm
       </button>
         */}
-        <TextField label='Event Title' inputRef={textFieldRefTitle} />
+        <TextField sx={{margin:'10px'}} label='Event Title' inputRef={textFieldRefTitle} />
         <br></br>
-        <TextField label='Event Description' inputRef={textFieldRefDescription} />
+        <TextField sx={{margin:'10px'}} label='Event Description' inputRef={textFieldRefDescription} />
         <br></br>
-        <Button variant='contained' className="btn btn--alt" onClick={onCancal}>
+        <Button sx={{margin:'10px'}} variant='contained' onClick={onCancal}>
           Cancel
         </Button>
-        <Button variant='contained' color='success' className="btn btn--altC" onClick={addEvent}>
+        <Button sx={{margin:'10px'}} variant='contained' color='success'onClick={addEvent}>
           Confirm
         </Button>
     </div>

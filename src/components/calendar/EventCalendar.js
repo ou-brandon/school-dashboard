@@ -8,8 +8,10 @@ import Backdrop from "./Backdrop";
 import db from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Event from "./Event";
-import { Box, Typography, Card } from "@mui/material";
-
+import { Box, Typography, Card, Grid } from "@mui/material";
+import background from "./img.jpg";
+import styles from "./calendar.css";
+import "./calendar.css";
 
 const EventCalendar = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -65,47 +67,61 @@ const EventCalendar = (props) => {
 
   return (
     <div>
-      <Card sx={{bgcolor:'lightskyblue', marginTop: '2%', marginLeft: '25%', marginRight: '25%', paddingBottom: '15%', boxShadow: 7}}>
-        <Typography variant='h3'>Event Calendar</Typography>
-        <Box sx={{display: 'flex', justifyContent: 'space-around', padding:'25px'}}>
-          <Box>
-            <Calendar sx={{boxShadow: 3, height: '400px' }} value={date} onClickDay={updateEvents} />
-          </Box>
-          
-          <div>
-            <h1>{dayjs(date).format("MM/DD/YY").toString()}</h1>
-            {events.map((event) => (
-              <Event
-                key={event.id}
-                id={event.id}
-                title={event.title}
-                description={event.description}
-                updateEvents={updateEvents}
-                badDate={date}
+      <div
+        className="articles"
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        <Card
+          sx={{
+            bgcolor: "lightskyblue",
+            marginTop: "1%",
+            marginLeft: "25%",
+            marginRight: "25%",
+            paddingBottom: "15%",
+            boxShadow: 7,
+          }}
+        >
+          <Typography variant="h3">Event Calendar</Typography>
+          <Grid container spacing={-3}>
+            <Grid item xs={5} marginTop="2.5rem" marginLeft="3rem">
+              <Calendar
+                sx={{ boxShadow: 3, height: "400px" }}
+                value={date}
+                onClickDay={updateEvents}
               />
-            ))}
-            <div>
               <button className="btnAdd" onClick={deleteHandler}>
                 Add Event
               </button>
-            </div>
-            {modalIsOpen && (
-              <Modal
-                onClick={closeHandler}
-                updateEvents={updateEvents}
-                date={dayjs(date).format("MM/DD/YY").toString()}
-                badDate={date}
-              />
-            )}
-            {modalIsOpen && <Backdrop onClick={closeHandler} />}
-          </div>
-        </Box>
-      </Card>
-      
-      
-      </div>
-      
+            </Grid>
+            <Grid item xs={6}>
+              <Box sx={{ justifyContent: "center", padding: "5px" }}>
+                <h1>{dayjs(date).format("MM/DD/YY").toString()}</h1>
+                {events.map((event) => (
+                  <Event
+                    key={event.id}
+                    id={event.id}
+                    title={event.title}
+                    description={event.description}
+                    updateEvents={updateEvents}
+                    badDate={date}
+                  />
+                ))}
+                {modalIsOpen && (
+                  <Modal
+                    onClick={closeHandler}
+                    updateEvents={updateEvents}
+                    date={dayjs(date).format("MM/DD/YY").toString()}
+                    badDate={date}
+                  />
+                )}
+                {modalIsOpen && <Backdrop onClick={closeHandler} />}
+              </Box>
+            </Grid>
+          </Grid>
+        </Card>
+        </div>
+    </div>
   );
-}
+};
 
 export default EventCalendar;
