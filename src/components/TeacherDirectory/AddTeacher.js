@@ -37,10 +37,10 @@ const AddTeacher = (props) => {
     }
     
     return (
-        <>
-            <TextField label='First Name' inputRef={newTeacherFirstName}/>
-            <TextField label='Last Name' inputRef={newTeacherLastName}/>
-            <TextField label='Teacher ID' inputRef={newTeacherID}/>
+        <> 
+            <TextField sx={{margin: '10px'}} label='First Name' inputRef={newTeacherFirstName}/>
+            <TextField sx={{margin: '10px'}} label='Last Name' inputRef={newTeacherLastName}/>
+            <TextField sx={{margin: '10px'}} label='Teacher ID' inputRef={newTeacherID}/>
             <br></br>
             <Button variant='contained' onClick={handleSubmit}>
                 Add Teacher
