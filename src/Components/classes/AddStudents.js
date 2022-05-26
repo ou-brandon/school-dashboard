@@ -64,12 +64,12 @@ const AddStudents = props => {
 								getOptionLabel={(option) => option.name}
 								value={value}
 								onChange={(event, newValue) => setValue(newValue)}
-								renderInput={(params) => <TextField {...params} label="Student" />}
+								renderInput={(params) => <TextField {...params} label="Student" variant="standard" />}
 								sx={{ mb: 1 }}
 							/>
 						: null}
 					</FormControl>
-					<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 1 }}>Add Student</Button>
+					<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>Add Student</Button>
 				</Box>
 			</Modal>
 		</>

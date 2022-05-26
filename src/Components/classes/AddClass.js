@@ -56,18 +56,18 @@ const AddClass = props => {
 				 	<FormControl fullWidth>
 						<TextField
 							required
-							variant="outlined"
 							label="Class Name"
 							id="className" 
 							onChange={handleName} 
+							variant="standard"
 							sx={{ mb: 1 }}
 						/>
 						<TextField 
 							required
-							variant="outlined"
 							label="Room"
 							id="classRoom"
 							onChange={handleRoom} 
+							variant="standard"
 							sx={{ my: 1 }}
 						/>
 						{teachers ? 
@@ -77,6 +77,7 @@ const AddClass = props => {
 							value={classTeacher} 
 							label="Teacher" 
 							onChange={handleTeacher}
+							variant="standard"
 							sx={{ my: 1 }}
 						>
 							{teachers.map((teacher) => {
@@ -87,7 +88,7 @@ const AddClass = props => {
 							)}
 						</TextField>
 						: null}
-						<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 1 }}>Add Class</Button>
+						<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>Add Class</Button>
 					</FormControl>
 				</Box>
 			</Modal>
