@@ -53,7 +53,7 @@ const AddStudents = props => {
 
 	return (
 		<>
-			<Button variant="contained" onClick={handleOpen}>Add Students</Button>
+			<Button fullWidth variant="contained" onClick={handleOpen}>Add Students</Button>
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={style}>
 				 	<FormControl fullWidth>
@@ -64,11 +64,12 @@ const AddStudents = props => {
 								getOptionLabel={(option) => option.name}
 								value={value}
 								onChange={(event, newValue) => setValue(newValue)}
-								renderInput={(params) => <TextField {...params} label="Student" />}
+								renderInput={(params) => <TextField {...params} label="Student" variant="standard" />}
+								sx={{ mb: 1 }}
 							/>
 						: null}
 					</FormControl>
-					<Button variant="contained" onClick={handleSubmit}>Add Student</Button>
+					<Button fullWidth variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>Add Student</Button>
 				</Box>
 			</Modal>
 		</>

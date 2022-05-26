@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { Grid, Box, Paper } from "@mui/material";
+import { Grid, Box, Paper, Card } from "@mui/material";
 import { useState } from "react";
 
 import ClassList from "./ClassList.js";
@@ -20,19 +20,34 @@ const Classes = (props) => {
 
   return (
     <>
-      <Typography variant="h4">Classes</Typography>
+      <Box sx={{
+        mx: '35%',
+        my: '1%'
+      }}>
+        <Card sx={{ mb: '10px' }}>
+          <Typography variant="h4" sx={{ py: '10px' }}>Classes</Typography>
+        </Card>
+      </Box>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid item xs={3}>
-            <Paper elevation={4}>
-              <ClassList update={updateClass} setUpdate={setUpdatedClass} setDelete={setDeletedClass} setClass={setSelectedClass} />
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}></Grid>
+          <Grid item xs={4}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={4}>
-                  {selectedClass ? <ClassInfo info={selectedClass} /> : null}
+                  <ClassList update={updateClass} setUpdate={setUpdatedClass} setDelete={setDeletedClass} setClass={setSelectedClass} />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <AddClass onAdd={setUpdatedClass} />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Paper elevation={4}>
+                {selectedClass ? <ClassInfo info={selectedClass} /> : null}
                 </Paper>
               </Grid>
               <Grid item xs={12}>
@@ -40,23 +55,20 @@ const Classes = (props) => {
                   {selectedClass ? <StudentList info={selectedClass} changedStudent={changedStudent} setStudent={setSelectedStudent} /> : null}
                 </Paper>
               </Grid>
-			  <Grid item xs={12}>
-				{selectedClass ? <AddStudents info={selectedClass} onChange={setChangedStudent} /> : null}
-			  </Grid>
-			  <Grid item xs={12}>
-				{selectedStudent ? <DeleteStudent studentInfo={selectedStudent} classInfo={selectedClass} onChange={setChangedStudent} /> : null}
-			  </Grid>
+              <Grid item xs={12}>
+                {selectedClass ? <AddStudents info={selectedClass} onChange={setChangedStudent} /> : null}
+              </Grid>
+              {selectedStudent ? 
+              <Grid item xs={12}>
+                {<DeleteStudent studentInfo={selectedStudent} classInfo={selectedClass} onChange={setChangedStudent} />}
+              </Grid>
+              : null}
               <Grid item xs={12}>
                 {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={3}></Grid>
-          <Grid item xs={3}>
-			<Paper elevation={4}>
-			  <AddClass onAdd={setUpdatedClass} />
-			</Paper>
-		  </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
       </Box>
     </>
