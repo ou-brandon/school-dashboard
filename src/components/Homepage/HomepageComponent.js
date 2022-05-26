@@ -7,7 +7,7 @@ const HomepageComponent = (props) => {
     return (
         
         <> 
-            <Card style={{backgroundColor: "#79c1e2"}} sx={{boxShadow: 3, ':hover': {boxShadow: 9}}}>
+            <Card style={{backgroundColor: "lightskyblue"}} sx={{boxShadow: 3, ':hover': {boxShadow: 9}}}>
                 <CardActionArea component={Link} to={props.link}>
                     <Box>
                         <Typography variant='h5'>{props.title}</Typography>

@@ -21,7 +21,8 @@
     background-color: #008035;
     color: white;
     border: 1px solid #008035;
-    margin: 0rem;
+    margin: 1rem;
+    margin-right: 4rem;
   }
    
   .btn:hover {
@@ -32,13 +33,13 @@
   .btn--alt {
     background-color: transparent;
     color: #800040;
-    margin: 0 .5rem;
+    margin: 1rem;
   }
 
   .btn--altC {
     background-color: transparent;
     color: #008035;
-    margin: 0 .5rem;
+    margin: 1rem;
   }
    
   .btn--alt:hover {

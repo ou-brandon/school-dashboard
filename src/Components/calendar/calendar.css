@@ -1,0 +1,9 @@
+.articles {
+    height: 130%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: grid;
+    place-items: top;
+    background-attachment: fixed;
+}
