@@ -7,10 +7,14 @@ import StudentList from "./StudentList.js";
 import ClassInfo from "./ClassInfo.js";
 import AddClass from "./AddClass.js";
 import DeleteClass from "./DeleteClass.js";
+import AddStudents from "./AddStudents.js";
+
 const Classes = (props) => {
   const [selectedClass, setSelectedClass] = useState();
   const [deletedClass, setDeletedClass] = useState();
   const [updateClass, setUpdatedClass] = useState(false);
+
+  const [addedStudent, setAddedStudent] = useState();
 
   return (
     <>
@@ -31,9 +35,12 @@ const Classes = (props) => {
               </Grid>
               <Grid item xs={12}>
                 <Paper elevation={4}>
-                  {selectedClass ? <StudentList info={selectedClass} /> : null}
+                  {selectedClass ? <StudentList info={selectedClass} addedStudent={addedStudent} /> : null}
                 </Paper>
               </Grid>
+			  <Grid item xs={12}>
+				{selectedClass ? <AddStudents info={selectedClass} onAdd={setAddedStudent} /> : null}
+			  </Grid>
               <Grid item xs={12}>
                 {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
               </Grid>
@@ -41,9 +48,9 @@ const Classes = (props) => {
           </Grid>
           <Grid item xs={3}></Grid>
           <Grid item xs={3}>
-			  <Paper elevation={4}>
-				  <AddClass onAdd={setUpdatedClass} />
-			  </Paper>
+			<Paper elevation={4}>
+			  <AddClass onAdd={setUpdatedClass} />
+			</Paper>
 		  </Grid>
         </Grid>
       </Box>
