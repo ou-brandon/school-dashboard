@@ -15,7 +15,7 @@ const StudentSearch = (props) => {
         setQueryExist(true);
         const queryStudents = [];
         props.students.forEach((stdnt) => {
-            if(stdnt.data().id.includes(q) || stdnt.data().firstName.includes(q) || stdnt.data().lastName.includes(q)){
+            if(stdnt.data().id.includes(q) || stdnt.data().firstName.includes(q) || stdnt.data().lastName.includes(q) || (stdnt.data().grade + '').includes(q)){
                 queryStudents.push(stdnt);
             }
         })
@@ -30,7 +30,7 @@ const StudentSearch = (props) => {
         <>
             <Paper
                 component="form"
-                sx={{ display: 'flex', alignItems: 'center', marginLeft: '40%', marginRight: '40%', marginTop: '1%', marginBottom: '1%' }}
+                sx={{ display: 'flex', alignItems: 'center' }}
             >
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
