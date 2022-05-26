@@ -1,6 +1,7 @@
 import './class.css';
 import db from '../../firebase';
 import { deleteDoc, doc } from "firebase/firestore";
+import { Button } from '@mui/material';
 
 function DeleteClass(props) {
 
@@ -13,7 +14,7 @@ function DeleteClass(props) {
     
 
     return <div>
-        <button className="delBtn" onClick={deleteClass} >Delete Class</button>
+        <Button fullWidth variant="contained" className="delBtn" onClick={deleteClass} color="error">Delete Class</Button>
     </div>
 }
 

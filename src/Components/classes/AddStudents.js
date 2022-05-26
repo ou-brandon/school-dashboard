@@ -53,7 +53,7 @@ const AddStudents = props => {
 
 	return (
 		<>
-			<Button variant="contained" onClick={handleOpen}>Add Students</Button>
+			<Button fullWidth variant="contained" onClick={handleOpen}>Add Students</Button>
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={style}>
 				 	<FormControl fullWidth>

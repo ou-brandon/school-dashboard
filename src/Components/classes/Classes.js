@@ -51,9 +51,11 @@ const Classes = (props) => {
 			  <Grid item xs={12}>
 				{selectedClass ? <AddStudents info={selectedClass} onChange={setChangedStudent} /> : null}
 			  </Grid>
+			  {selectedStudent ? 
 			  <Grid item xs={12}>
 				{selectedStudent ? <DeleteStudent studentInfo={selectedStudent} classInfo={selectedClass} onChange={setChangedStudent} /> : null}
 			  </Grid>
+			  : null}
               <Grid item xs={12}>
                 {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
               </Grid>

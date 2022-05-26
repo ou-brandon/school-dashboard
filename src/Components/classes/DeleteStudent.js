@@ -39,7 +39,7 @@ const DeleteStudent = props => {
 
 	return (
 		<>
-			<Button variant="contained" color="error" onClick={handleOpen}>Delete Student</Button>
+			<Button fullWidth variant="contained" color="error" onClick={handleOpen}>Delete Student</Button>
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={style}>
 				{studentDoc ? 
