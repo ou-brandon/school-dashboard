@@ -30,7 +30,7 @@ const TeacherSearchBar = (props) => {
         <>
             <Paper
                 component="form"
-                sx={{ display: 'flex', alignItems: 'center', marginLeft: '40%', marginRight: '40%', marginTop: '1%', marginBottom: '1%' }}
+                sx={{ display: 'flex', alignItems: 'center'}}
             >
             <InputBase
                 sx={{ ml: 1, flex: 1 }}

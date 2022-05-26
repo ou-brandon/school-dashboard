@@ -35,10 +35,10 @@ const AddStudent = (props) => {
     
     return (
         <>
-            <TextField label='First Name' inputRef={newStudentFirstName}/>
-            <TextField label='Last Name' inputRef={newStudentLastName}/>
-            <TextField label='Student ID' inputRef={newStudentID}/>
-            <TextField label='Student Grade' inputRef={newStudentGrade}/>
+            <TextField sx={{margin: '10px'}} label='First Name' inputRef={newStudentFirstName}/>
+            <TextField sx={{margin: '10px'}} label='Last Name' inputRef={newStudentLastName}/>
+            <TextField sx={{margin: '10px'}} label='Student ID' inputRef={newStudentID}/>
+            <TextField sx={{margin: '10px'}} label='Student Grade' inputRef={newStudentGrade}/>
             <br></br>
             <Button variant='contained' onClick={handleSubmit}>
                 Add Student
