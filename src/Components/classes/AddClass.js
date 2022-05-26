@@ -45,6 +45,7 @@ const AddClass = props => {
 		});
 		console.log('document written with id: ', docRef.id);
 		setOpen(false);
+		props.onAdd(true);
 	};
 
 	return (

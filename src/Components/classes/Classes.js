@@ -9,9 +9,7 @@ import AddClass from "./AddClass.js";
 import DeleteClass from "./DeleteClass.js";
 const Classes = (props) => {
   const [selectedClass, setSelectedClass] = useState();
-  
   const [deletedClass, setDeletedClass] = useState();
-
   const [updateClass, setUpdatedClass] = useState(false);
 
   return (
@@ -44,7 +42,7 @@ const Classes = (props) => {
           <Grid item xs={3}></Grid>
           <Grid item xs={3}>
 			  <Paper elevation={4}>
-				  <AddClass />
+				  <AddClass onAdd={setUpdatedClass} />
 			  </Paper>
 		  </Grid>
         </Grid>
