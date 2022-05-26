@@ -6,6 +6,7 @@ import AddStudent from './AddStudent';
 import './student_dir.css';
 import db from '../../firebase.js'
 import StudentSearch from './StudentSearch';
+import { Box, Drawer, Typography, Card} from '@mui/material'
 
 const StudentDirectory = (props) => {
     const [students, setStudents] = useState([]);
@@ -24,11 +25,30 @@ const StudentDirectory = (props) => {
         fetchStudents();
     }, [])
     return (
-        <div id='student-directory'>
-            <AddStudent students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
-            <StudentSearch students={students} setStudents={setStudents} fetchStudents={fetchStudents} />
-            <StudentList students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
-        </div>
+        <>
+            <div id='add-student-sidebar'>
+                <Box>
+                    <Drawer PaperProps={{sx: {width: '15%', padding: '1%', paddingTop: '10%'}}} 
+                        elevation={16} anchor='left' open={true} variant='persistent'>
+                            <Typography color='secondary' variant='h6'>Add a Student</Typography>
+                            <AddStudent students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>              
+                    </Drawer>
+                </Box>
+
+            </div>
+            <div id='student-directory'>
+                <Box sx={{marginLeft: '35%', marginRight: '35%', marginTop: '1%', marginBottom: '1%'}} >
+                    <Card>
+                        <Typography sx={{paddingTop: '10px'}} variant='h4'>Students</Typography>
+                    </Card>
+                    
+                    <StudentSearch students={students} setStudents={setStudents} fetchStudents={fetchStudents} />
+                    <StudentList students={students} setStudents={setStudents} fetchStudents={fetchStudents}/>
+                </Box>
+            </div>
+                
+        </>
+        
         
     );
 }
