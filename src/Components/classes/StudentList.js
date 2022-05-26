@@ -11,7 +11,7 @@ const StudentList = props => {
 				setStudentsData(allDocs);
 				console.log(allDocs);
 			});
-	}, [props.info])
+	}, [props.info, props.addedStudent])
 
 	let students = [];
 	if (studentsData)
@@ -19,7 +19,7 @@ const StudentList = props => {
 			students.push(<StudentButton info={doc} key={doc.id} setStudent={props.setStudent} />);
 			console.log(doc.data());
 		}
-			);
+	);
 
 	return (
 		<>
@@ -34,10 +34,7 @@ const StudentButton = props => {
 	const [student, setStudent] = useState();
 	useEffect(() => {
 		getDoc(props.info.data().student)
-			.then((doc) => {
-				console.log(doc.data());
-				setStudent(doc);
-			})
+			.then((doc) => setStudent(doc))
 	}, [props.info])
 	
 	let firstName, lastName = null;
