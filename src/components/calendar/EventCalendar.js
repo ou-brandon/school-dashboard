@@ -77,11 +77,11 @@ const EventCalendar = (props) => {
             marginTop: "1%",
             marginLeft: "25%",
             marginRight: "25%",
-            paddingBottom: "15%",
+            paddingBottom: "18%",
             boxShadow: 7,
           }}
         >
-          <Typography variant="h3">Event Calendar</Typography>
+          <Typography sx={{paddingTop: "5px" }} variant="h3">Event Calendar</Typography>
           <Grid container spacing={-3}>
             <Grid item xs={5} marginTop="2.5rem" marginLeft="3rem">
               <Calendar
