@@ -7,6 +7,7 @@ function DeleteClass(props) {
     function deleteClass() {
         console.log(props.id);
         deleteDoc(doc(db, "classes", props.id));
+        props.updated(true);
         props.deleted();
     }
     
