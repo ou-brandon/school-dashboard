@@ -1,14 +1,15 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import HomepageComponent from "./HomepageComponent";
+/*
 import { Card } from "@mui/material";
 import ListIcon from "@mui/icons-material/List";
 import SchoolIcon from "@mui/icons-material/School";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+*/
 import background from "./tj2.jpg";
-import styles from "./Homepage.css";
+//import styles from "./Homepage.css";
 import "./Homepage.css";
 
 // <img className="photo" src={img}></img>
@@ -18,8 +19,9 @@ const Homepage = (props) => {
   const teacherDirectoryDescription =
     "Search for teachers using an ID, first name, or last name. Add, edit, or delete teachers";
   const classesDescription =
-    "Search for classes ____. Add, edit, or delete classes";
-  const calendarDescription = "View or add events to the school calendar ";
+    "View, add, edit, or delete classes";
+  const calendarDescription = 
+    "View or add events to the school calendar";
   return (
     <>
       <article
