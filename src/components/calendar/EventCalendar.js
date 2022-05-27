@@ -89,6 +89,7 @@ const EventCalendar = () => {
             marginRight: "25%",
             paddingBottom: "18%",
             boxShadow: 7,
+            borderRadius: 2,
           }}
         >
           <Typography sx={{paddingTop: "5px" }} variant="h3">Event Calendar</Typography>
