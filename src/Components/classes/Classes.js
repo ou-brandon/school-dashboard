@@ -64,7 +64,7 @@ const Classes = (props) => {
               </Grid>
               : null}
               <Grid item xs={12}>
-                {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} id={deletedClass}/> : null}
+                {selectedClass ? <DeleteClass updated={setUpdatedClass} deleted={setSelectedClass} class={deletedClass}/> : null}
               </Grid>
             </Grid>
           </Grid>

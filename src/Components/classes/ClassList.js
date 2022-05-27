@@ -60,7 +60,7 @@ const ClassList = (props) => {
 const ClassButton = (props) => {
   const name = props.info.data().name;
   function classClicked() {
-    props.setDelete(props.id);
+    props.setDelete(props.info);
     props.setClass(props.info);
   }
 
