@@ -44,7 +44,7 @@ function DeleteClass(props) {
                         <Typography variant="body1">Click outside this box to cancel.</Typography>
                     </>
                 : null}
-                <Button fullWidth variant="contained" className="delBtn" onClick={deleteClass} color="error" sx={{ mt: 1 }}>Delete Class</Button>
+                <Button variant="contained" className="delBtn" onClick={deleteClass} color="error" sx={{ mt: 1 }}>Delete Class</Button>
             </Box>
         </Modal>
     </div>
