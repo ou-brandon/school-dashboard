@@ -1,5 +1,6 @@
 import Typography from '@mui/material/Typography';
 
+//If props don't get used, don't pass them in or include them in the function signature.
 const ErrorPage = props => {
 	return (
 		<>

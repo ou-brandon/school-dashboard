@@ -2,6 +2,14 @@ import { Link, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { MenuItem, Typography } from '@mui/material';
 import { AppBar } from '@mui/material';
+
+//Fix formatting
+//Good use of mui
+/*
+Is there anyway you could turn variant={useLocation().pathname==='/students' ? 'contained' : 'text'} into a reusable function?
+Right now, each button does a similar calculation with only one difference. 
+Code would be much cleaner if you called one function multiple times (argument you would pass in would be /students, /teachers, etc.
+*/
 const Navbar = props => {
 	return (
 		<>
