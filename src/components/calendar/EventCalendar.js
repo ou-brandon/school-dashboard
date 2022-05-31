@@ -27,7 +27,9 @@ const EventCalendar = () => {
   const [date, setDate] = useState(new Date());
 
   const [events, setEvents] = useState([]);
-
+  
+  //I'm not in love with the variable name "nothing". What does that mean? 
+  //If another developer worked on this code later, would "nothing" be easily understandable to them?
   const [nothing, setNothing] = useState(false);
 
   useEffect(() => {

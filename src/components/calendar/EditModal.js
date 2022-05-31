@@ -3,6 +3,24 @@ import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { useRef } from "react";
 import { Typography } from "@mui/material";
 import { TextField, Button } from "@mui/material";
+
+/*
+Consider destructuring props like:
+
+const EditModal = ({onClick, badDate, id, etc.}) => {
+        stuff
+}
+
+This makes it so that you don't have to type props.stuff every time. Improves readability.
+
+
+Remove console logs.
+Improve file formatting.
+Remove commented out code.
+Write functions as const = () => {}
+I saw the above issues in multiple files. This feedback applies to those files as well.
+*/
+
 function EditModal(props) {
     const textFieldRefTitle = useRef(null);
     const textFieldRefDescription = useRef(null);

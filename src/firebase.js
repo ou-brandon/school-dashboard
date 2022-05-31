@@ -12,6 +12,8 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp)
+
+//Don't leave console logs in your final code.
 console.log(firebaseConfig);
 
 export default db;
