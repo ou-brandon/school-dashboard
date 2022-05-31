@@ -10,6 +10,9 @@ const TeacherSearchBar = (props) => {
     const [queryExist, setQueryExist] = useState(false);
     const searchQuery = useRef();
 
+    /*
+    Wrap functions in useCallback
+    */
     const handleQuery = () => {
         const q = searchQuery.current.value;
         setQueryExist(true);

@@ -4,6 +4,11 @@ import { useRef } from "react";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
+
+/*
+Remove commented out code from your final code submission. 
+*/
+
 function Modal(props) {
   function onCancal() {
     props.onClick();

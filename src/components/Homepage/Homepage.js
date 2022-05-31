@@ -14,6 +14,10 @@ import "./Homepage.css";
 
 // <img className="photo" src={img}></img>
 const Homepage = (props) => {
+  
+  /*
+  I love this use of const for storing long text. This makes your logic in the return very readable.
+  */
   const studentDirectoryDescription =
     "Search for students using an ID, first name, or last name. Add, edit, or delete students";
   const teacherDirectoryDescription =
